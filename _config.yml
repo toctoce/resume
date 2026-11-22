@@ -29,6 +29,17 @@ about_content: |
   이후 공공주택 서비스 팀 프로젝트에서 인프라 구축과 운영을 담당하며, CI/CD 기반 배포 자동화와 모니터링 시스템을 구축했습니다.
 
 content:
+  - title: Education
+    layout: list
+    content:
+      - layout: left
+        title: 서울시립대학교
+        sub_title: 컴퓨터과학부 · 졸업 예정
+        caption: "2019.03 ~ 2027.02"
+        description: |
+          - 전공 평점: 4.15 / 4.5
+          - 전체 평점: 3.76 / 4.5
+
   - title: Projects
     layout: list
     content:
@@ -40,11 +51,9 @@ content:
         quote: >
           지도에서 공공임대주택 단지와 모집 공고를 확인하는 서비스
         description: |
-          - 개발·운영 환경을 분리하고 DB·모니터링 서버 구성
-          - GitHub Actions와 self-hosted runner 기반 배포 자동화
-          - dev·main 브랜치 변경 시 각각 개발·운영 환경에 배포하도록 구성
-          - 개발·운영·공유 DB를 단일 DB 서버로 통합해 관리 대상과 비용 축소
-          - Prometheus·Grafana·Loki 기반 모니터링 및 Discord 장애 알림 구성
+          - **배포 자동화:** SSH 접근이 제한된 환경에서 GitHub Actions와 self-hosted runner 기반 CI/CD를 구축해 수동 배포 제거 및 배포 오류 예방
+          - **운영 가시성 확보:** Prometheus·Grafana·Alloy·Loki로 지표와 로그를 통합해 SSH 접속 없이 운영 상태 확인 및 장애 원인 분석
+          - **장애 대응:** 지연 시간 급증과 HTTP 5xx 오류에 대한 Discord 실시간 알림을 구성하고, traceId로 요청과 로그를 연계해 운영 병목 분석·해결
 
           **Tech Stack:** AWS EC2, Docker, PostgreSQL, GitHub Actions, Prometheus, Grafana, Loki
 
@@ -60,26 +69,13 @@ content:
         quote: >
           알고리즘 문제 풀이와 온라인 채점을 제공하는 서비스
         description: |
-          - Java/Spring Boot 기반 문제 조회·제출·채점 결과 API 개발
-          - Docker 기반 채점 워커를 분리해 제출 코드 실행 환경 격리
-          - 메모리 큐를 Redis 공통 큐로 전환해 여러 워커가 채점 요청을 처리하도록 개선
-          - Prometheus·Grafana·Loki 기반 지표·로그 모니터링 및 Discord 알림 구성
-          - 생성형 AI의 문제 초안 작성과 검토 역할을 분리해 수정·재검토 절차 구성
+          - **검색 성능 개선:** 30만 건 데이터의 검색 쿼리를 인덱스로 최적화해 p95 지연 시간을 32.75ms에서 1.82ms로 약 94% 단축
+          - **채점 작업 분산:** Redis 메시지 큐로 Spring Boot API 서버와 실행 워커를 분리하고, 여러 워커 인스턴스에 채점 작업 분산
+          - **실행 환경 격리:** 제출 코드를 Docker 컨테이너에서 실행하고 네트워크 차단, 테스트케이스별 1~2초 시간 제한 및 128~256MB 메모리 제한으로 무한 루프와 호스트 자원 고갈 방지
 
           **Tech Stack:** Java, Spring Boot, PostgreSQL, Redis, Docker, AWS EC2
 
-  - title: Education
-    layout: list
-    content:
-      - layout: left
-        title: 서울시립대학교
-        sub_title: 컴퓨터과학부 · 졸업 예정
-        caption: "2019.03 ~ 2027.02"
-        description: |
-          - 전체 평점: 3.76 / 4.5
-          - 전공 평점: 4.15 / 4.5
-
-  - title: Experience
+  - title: Training
     layout: list
     content:
       - layout: left
@@ -97,6 +93,17 @@ content:
           - Prometheus·Grafana·Loki 기반 모니터링 환경 및 Discord 장애 알림 구축
 
       - layout: left
+        title: 네이버 클라우드 아카데미 1기
+        sub_title: Naver Cloud Platform · 교육
+        caption: "2025.10.25 ~ 2025.11.29"
+        quote: >
+          클라우드 서비스 실습과 3-Tier 아키텍처 구축 교육
+        description: |
+          - Naver Cloud Platform 주요 서비스에 대한 이론 학습 및 실습
+          - 클라우드 기반 3-Tier 아키텍처 설계 및 구축
+          - VPC와 로드밸런서를 활용한 네트워크 및 트래픽 분산 환경 구성
+
+      - layout: left
         title: 42 Seoul
         sub_title: 이노베이션 아카데미 · 교육
         caption: "2022.11.07 ~ 2023.12.31"
@@ -108,16 +115,67 @@ content:
           - 자료구조, 셸·터미널 환경 등 컴퓨터공학 핵심 지식 습득
           - 동료 평가와 협업 학습을 통한 코드 리뷰 및 문제 해결 역량 강화
 
+  - title: Experience
+    layout: list
+    content:
       - layout: left
-        title: 네이버 클라우드 아카데미 1기
-        sub_title: Naver Cloud Platform · 교육
-        caption: "2025.10.25 ~ 2025.11.29"
+        title: University of Oldenburg
+        sub_title: 독일 · 교환학생
+        caption: "2024.07 ~ 2025.02"
         quote: >
-          클라우드 서비스 실습과 3-Tier 아키텍처 구축 교육
+          영어로 진행되는 전공 수업을 수강하고 다양한 국적의 학생들과 교류
         description: |
-          - Naver Cloud Platform 주요 서비스에 대한 이론 학습 및 실습
-          - 클라우드 기반 3-Tier 아키텍처 설계 및 구축
-          - VPC와 로드밸런서를 활용한 네트워크 및 트래픽 분산 환경 구성
+          - Applied Deep Learning, Introduction to IT-Security 전공 수업을 영어로 수강
+          - 다양한 국적의 학생들과 영어로 교류하고 현지 행사에 참여
+          - 먼저 대화를 시작하고 상대의 의도를 질문·확인하며 적극적으로 소통
+
+      - layout: left
+        title: 서울시립대학교 지능정보시스템연구실
+        sub_title: 학부연구생
+        caption: "2023.11 ~ 2024.06"
+        quote: >
+          노드 특성과 구조 정보를 분리하는 비지도 그래프 대조 학습 모델 DDCL 연구
+        description: |
+          - **연구 수행:** 실험 계획 수립, Python·PyTorch 기반 모델 개발, 비교 실험 및 논문 작성
+          - **모델 설계:** 노드 특성과 구조 정보를 각각 처리하는 이중 간선 판별기와 4-채널 대조 학습 모듈을 결합한 DDCL 모델 제안·구현
+          - **실험 결과:** 6개 그래프 데이터셋 중 5개에서 기존 GREET 대비 노드 분류 성능 향상 확인
+
+          **논문 발표**
+          - [「간선 판별 분리를 이용한 그래프 대조 학습」](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11862018) · 한국정보과학회 KCC 2024 · 2024.06.26
+          - 「간선 판별 분리를 이용한 그래프 대조 학습」
+
+          **특허 출원**
+
+          - 「비지도 그래프 대조 학습 모델 및 방법」 · 2024.10.07
+          - 출원번호: 10-2024-0135918
+          - 출원인: 서울시립대학교 산학협력단
+          - 공동발명자: 황혜수, 박나은, 박영규
+
+          **Tech Stack:** Python, PyTorch
+
+  - title: Awards & Certifications
+    layout: list
+    content:
+      - layout: left
+        title: Awards
+        description: |
+          - 2025 컴퓨터 알고리즘 경진대회 은상 · 서울시립대학교 · 2025.12.06
+          - AICOSS 해커톤 경진대회 장려상 · 2024.01.22
+          - 2022 컴퓨터 알고리즘 경진대회 장려상 · 서울시립대학교 · 2022.12.03
+
+      - layout: left
+        title: Certifications
+        description: |
+          - AWS Certified AI Practitioner · 2026.09
+          - 리눅스마스터 2급 · 2026.07
+          - 정보처리기사 · 2025.12
+          - SQLD · 2025.12
+          - NCP Certified Professional · 2025.12
+
+      - layout: left
+        title: Languages
+        description: |
+          - OPIc IM3 · 2026.02
 
   - title: Skills
     layout: list
@@ -143,21 +201,6 @@ content:
           - Docker, Docker Compose
           - Nginx, Linux
           - Prometheus, Grafana, Loki
-
-  - title: A Little More About Me
-    layout: text
-    content: |
-      **Certifications**
-
-      - AWS Certified AI Practitioner · 2026.09
-      - 리눅스마스터 2급 · 2026.07
-      - 정보처리기사 · 2025.12
-      - SQLD · 2025.12
-      - NCP Certified Professional · 2025.12
-
-      **Languages**
-
-      - OPIc IM3 · 2026.02
 
 # 하단 추천인 안내 문구 표시
 footer_show_references: true
