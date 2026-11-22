@@ -1,127 +1,181 @@
-# Site
-repository: sproogen/resume-theme
+# 사이트
+repository: toctoce/resume
+url: "https://toctoce.github.io"
+baseurl: "/resume"
 favicon: images/favicon.ico
+lang: ko
 
-# Content configuration version
 version: 2
 
-# Personal info
-name: Brett Harris
-title: Senior Network System Administrator
-email: brett.h@email.co.uk
-website: www.github.com/sproogen/resume-theme
+# 기본 정보
+name: 박영규
+title: 백엔드 개발자
+email: ypungkyu0317@gmail.com
+website: "https://toctoce.github.io"
 
-# Dark Mode (true/false/never)
+# true: 어두운 화면, false: 기기 설정에 따름, never: 항상 밝은 화면
 darkmode: false
 
-# Social links
-twitter_username: facespics
-github_username:  sproogen
-# stackoverflow_username: "00000001"
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
-instagram_username: jameswgrant
-linkedin_username: jameswgrant
-# xing_username: jekyll
-# pinterest_username: jekyll
-youtube_username: globalmtb
-# googleplus_username: +jekyll
-# orcid_username: 0000-0000-0000-0000
+github_username: toctoce
+linkedin_username: youngkyu-park-08472a3aa
 
-# Additional icon links
-additional_links:
-- title: itsgoingto.be
-  icon: fas fa-globe
-  url: https://www.itsgoingto.be
-# - title: another link
-#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
-#   url: Link url (eg. https://google.com)
-
-# Google Analytics and Tag Manager
-# Using more than one of these may cause issues with reporting
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
-
-# About Section
-# about_title: About Me
+about_title: About Me
+# 본인 사진으로 교체하세요. 사진을 사용하지 않으면 아래 항목을 삭제하세요.
 about_profile_image: images/profile.jpg
-about_content: | # this will include new lines to allow paragraphs
-  Hi, my name's Brett and I'm a senior network system administrator. As well as administrating systems I also have experience making software and web apps. I have worked at a number of companies gaining teamwork and leadership skills.
+about_content: |
+  개발과 운영 경험을 갖춘 백엔드 개발자 박영규입니다.
 
-  I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
+  개인 알고리즘 채점 플랫폼의 백엔드를 Java와 Spring Boot로 개발하고, 직접 배포하며 서비스 운영에 관심을 넓혔습니다.
+
+  이후 공공주택 서비스 팀 프로젝트에서 인프라 구축과 운영을 담당하며, CI/CD 기반 배포 자동화와 모니터링 시스템을 구축했습니다.
 
 content:
-  - title: Projects # Title for the section
-    layout: list # Type of content section (list/text)
+  - title: Projects
+    layout: list
     content:
-      - layout: top-middle
-        title: Super awesome project
-        link: github.com/sproogen
-        # link_text: Project Website
+      - layout: left
+        title: 공공주택 정보 서비스
+        sub_title: 팀 프로젝트 · 5인
+        caption: "2026.07 ~ 현재"
+        link: "https://bokduckbang.com"
+        link_text: Service
+        quote: >
+          지도에서 공공임대주택 단지와 모집 공고를 확인하는 서비스
+        description: |
+          **담당:** 인프라 구축 및 운영
+
+          - 개발·운영 환경을 분리하고 DB·모니터링 서버 구성
+          - GitHub Actions와 self-hosted runner 기반 배포 자동화
+          - dev·main 브랜치 변경 시 각각 개발·운영 환경에 배포하도록 구성
+          - 개발·운영·공유 DB를 단일 DB 서버로 통합해 관리 대상과 비용 축소
+          - Prometheus·Grafana·Loki 기반 모니터링 및 Discord 장애 알림 구성
+
+          **Tech Stack:** AWS EC2, Docker, PostgreSQL, GitHub Actions, Prometheus, Grafana, Loki
+
+      - layout: left
+        title: 알고리즘 채점 플랫폼
+        sub_title: 개인 프로젝트
+        caption: "2026.06 ~ 2026.07"
+        link: "https://algorithm.zzanggyu.com"
+        link_text: Service
         additional_links:
-          - title:  sproogen/modern-resume-theme
+          - title: GitHub
             icon: fab fa-github
-            url: github.com/sproogen/modern-resume-theme
-          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
-          #   icon: fab fa-github
-          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
+            url: "https://github.com/toctoce/ps-platform"
         quote: >
-          This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
-        description: | # this will include new lines to allow paragraphs
-          I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
+          알고리즘 문제 풀이와 온라인 채점을 제공하는 서비스
+        description: |
+          **담당:** 백엔드·채점 워커 개발, 인프라 구축 및 운영
 
-  - title: Experience # Title for the section
-    layout: list # Type of content section (list/text)
+          - Java/Spring Boot 기반 문제 조회·제출·채점 결과 API 개발
+          - Docker 기반 채점 워커를 분리해 제출 코드 실행 환경 격리
+          - 메모리 큐를 Redis 공통 큐로 전환해 여러 워커가 채점 요청을 처리하도록 개선
+          - Prometheus·Grafana·Loki 기반 지표·로그 모니터링 및 Discord 알림 구성
+          - 생성형 AI의 문제 초안 작성과 검토 역할을 분리해 수정·재검토 절차 구성
+
+          **Tech Stack:** Java, Spring Boot, PostgreSQL, Redis, Docker, AWS EC2
+
+  - title: Education
+    layout: list
     content:
       - layout: left
-        title: The Boring Company
-        link: boringcompany.com
-        # link_text: boringcompany.com
-        sub_title: Senior Network System Administrator
-        caption: November 2017 - Present
-        quote: >
-          Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
-        description: | # this will include new lines to allow paragraphs
-            Every company needs its networks properly administered and The Boring Compay is no exception. Digging holes is hard and I play my part making sure the whole company stays connected. I lead a team of 5 people and enjoy driving the company to try new technologies.
+        title: 서울시립대학교
+        sub_title: 컴퓨터과학부 · 졸업 예정
+        caption: "2019.03 ~ 2027.02"
+        description: |
+          - 전체 평점: 3.76 / 4.5
+          - 전공 평점: 4.15 / 4.5
 
-  - title: Education # Title for the section
-    layout: list # Type of content section (list/text)
+  - title: Experience
+    layout: list
     content:
       - layout: left
-        title: Harvard University
-        caption: 2010 - 2013
-        sub_title: BSc Computer Science
-        quote: >
-          Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
-        description: | # this will include new lines to allow paragraphs
-          During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.
+        title: 우아한테크코스 백엔드코스 8기
+        sub_title: 우아한형제들 · 교육
+        caption: "2026.02.24 ~ 2026.12.11 (수료 예정)"
+        description: |
+          - Java 기반 미션과 코드 리뷰를 통한 객체지향 설계, 테스트 코드 작성, 리팩터링 역량 강화
+          - Spring, 데이터베이스, REST API 설계 및 웹 백엔드 개발 역량 습득
+          - 페어 프로그래밍과 동료 리뷰를 통한 협업 및 커뮤니케이션 역량 강화
+          - 5인 팀 프로젝트를 통한 공공주택 정보 서비스 개발 및 인프라 구축·운영 담당
+          - AWS 기반 개발·운영 환경 구성 및 GitHub Actions를 활용한 CI/CD 구축
+          - Prometheus·Grafana·Loki 기반 모니터링 환경 및 Discord 장애 알림 구축
 
-          I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
+      - layout: left
+        title: 네이버 클라우드 아카데미 1기
+        sub_title: Naver Cloud Platform · 교육
+        caption: "2025.10.25 ~ 2025.11.29"
+        description: |
+          - Naver Cloud Platform 주요 서비스에 대한 이론 학습 및 실습
+          - 클라우드 기반 3-Tier 아키텍처 설계 및 구축
+          - VPC와 로드밸런서를 활용한 네트워크 및 트래픽 분산 환경 구성
+
+      - layout: left
+        title: 42 Seoul
+        sub_title: 이노베이션 아카데미 · 교육
+        caption: "2022.11.07 ~ 2023.12.31"
+        description: |
+          - C언어 기반 프로그래밍 과제 수행을 통한 기초 개발 역량 강화
+          - MiniShell 개발을 통한 프로세스 관리, 파이프라인, 리다이렉션 등 운영체제 동작 원리 학습
+          - 자료구조, 셸·터미널 환경 등 컴퓨터공학 핵심 지식 습득
+          - 동료 평가와 협업 학습을 통한 코드 리뷰 및 문제 해결 역량 강화
+
+  - title: Skills
+    layout: list
+    content:
+      - layout: left
+        title: Backend
+        description: |
+          - Java, C
+          - Spring Boot
+          - JPA, JdbcTemplate
+
+      - layout: left
+        title: Databases
+        description: |
+          - PostgreSQL, MySQL
+          - Redis
+
+      - layout: left
+        title: DevOps
+        description: |
+          - GitHub Actions
+          - AWS EC2
+          - Docker, Docker Compose
+          - Nginx, Linux
+          - Prometheus, Grafana, Loki
+
+      - layout: left
+        title: Frontend
+        description: |
+          - React
+          - Vite
 
   - title: A Little More About Me
     layout: text
-    content: | # this will include new lines to allow paragraphs
-      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-      - Rock climbing
-      - Gaming
-      - Knitting
-      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
+    content: |
+      **Certifications**
 
-      Look at this cool image  
-      ![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
+      - AWS Certified AI Practitioner · 2026.09
+      - 리눅스마스터 2급 · 2026.07
+      - 정보처리기사 · 2025.12
+      - SQLD · 2025.12
+      - NCP Certified Professional · 2025.12
 
-# Footer
+      **Languages**
+
+      - OPIc IM3 · 2026.02
+
+# 하단 추천인 안내 문구 표시
 footer_show_references: true
-# references_title: References on request (Override references text)
 
-# Build settings
-remote_theme: sproogen/resume-theme
+# 테마 및 빌드 설정
+remote_theme: sproogen/modern-resume-theme
 
 sass:
   sass_dir: _sass
   style: compressed
 
 plugins:
- - jekyll-seo-tag
+  - jekyll-seo-tag
+  - jekyll-remote-theme
