@@ -48,6 +48,10 @@ content:
         sub_title: 인프라 구축 및 운영
         caption: "2026.07 ~ 현재 · 팀 프로젝트(5인)"
         link: "https://bokduckbang.com"
+        additional_links:
+          - title: GitHub
+            icon: fab fa-github
+            url: "https://github.com/woowacourse-teams/2026-toadzip"
         quote: >
           지도에서 공공임대주택 단지와 모집 공고를 확인하는 서비스
         description: |
